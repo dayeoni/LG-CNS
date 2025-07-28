@@ -20,6 +20,26 @@
        } else {
         console.log(`미성년자 인증되었습니다...지불금액은 ${price/2}입니다.`);
        }
+
+       // switch ~ case 구문
+       // 자판기 1. 토레타 2. 박카스 3. 맥주
+       let number = window.parseInt(window.prompt(`자판기에서 원하시는 메뉴를 선택하세요!!`));
+       console.log(`DEBUG >>> type`, typeof number);
+       console.log(`DEBUG >>> 선택하신 번호는 ${number}입니다.`);
+       
+       switch(number) {
+            case 1: 
+                console.log(`선택하신 음료는 토레타입니다.`);
+                break;
+            case 2:
+                console.log(`선택하신 음료는 박카스입니다.`);
+                break;
+            case 3:
+                console.log(`선택하신 음료는 맥주입니다.`);
+                break;
+            default : 
+                console.log(`메뉴의 번호(1~3)만 입력하세요!`);
+       }
     </script>
 </body>
 </html>
