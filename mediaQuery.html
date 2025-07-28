@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 
+        최신 mobile 해상도: 320px ~ 430px의 css 해상도
+        mobile 해상도: max 767px -> 모바일 화면 전용
+        tablet 해상도: min 768px ~ max 1023px -> 태블릿 화면 전용
+        desktop 해상도: min-width 1024px -> 데스크탑 화면 전용
+        단위: rem, %, vw, flex
+    -->
+    <style>
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            body {
+                display: flex;
+                background: url("./img/bg-light.jpg");
+                background-size: cover; /* 배경 사이즈에 맞춰 이미지 전체 보이게 하기 */
+                justify-content: center; /* 가로 방향의 중앙 정렬 */
+                align-items: center; /* 세로 방향의 중앙 정렬 */
+                height: 100vh; /* 화면의 전체 세로를 꽉 차게 만들기 */
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>안녕하세요!! 미디어쿼리입니다.</h1>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.container {
+    border: 1px solid red;
+    width: 1000px;
+    margin: auto;
+}
+
+.card-title {
+    text-align: center;
+    border: 1px solid blue;
+    margin-bottom: 20px;
+    color: deepskyblue;
+    font-weight: bold;
+}
+
+.card-list {
+    width: 1000px;
+    border: 1px solid blueviolet;
+}
+
+.card {
+    border: 1px solid blue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 200px;
+    margin-right: 30px;
+    border-radius: 10px;
+    float: right;
+    padding: 5px;
+}
+
+img {
+    width: 200px;
+    border-radius: 100px;
+}
+/*
+a {
+    text-align: center;
+    text-decoration-line: none;
+}
+
+button {
+    display: inline-block;
+}
+
+button:hover {
+    background-color: red;
+    color: white; 
+}
+*/
+
+.card > a {
+    text-decoration: none;
+}
+
+.card h3, button {
+    text-align: center; /* 버튼 내 캡션이 중앙정렬됨 */
+}
+
+button{
+    width: 180px;
+    margin: auto;
+    border: 1px solid red;
+    border-radius: 25px;
+    margin: 10px 5px 10px 10px;
+    padding: 10px 20px;
+}
+
+button:hover {
+    background-color: red;
+    color: white; 
+}
