@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        const add = function(a,b) {
+            console.log("[debug] >>> ", a+b);
+            return a+b;
+        }
+        console.log(add(10,20));
+        //////////////////////////////////////
+        const addLambda = (a,b) => a+b;
+        console.log("[debug] labmda >>> ", addLambda(10,20));
+        //////////////////////////////////////
+        console.log("[debug] 매개변수 없는 람다식");
+        const sayHello = () => console.log("hello");
+        sayHello();
+
+        console.log("[debug] 매개변수가 하나인 경우 괄호 생략 가능");
+        const square = x => x * x;
+        console.log("[debug] >>> ", square(10))
+
+        console.log("[debug] 함수로직 구현부에 {}사용 가능");
+        const multiply = (a,b) => {
+            const result = a * b;
+            return result;
+        }
+        console.log("[debug] >>> ", multiply(10,20));
+
+        console.log("[debug] 배열과 함께 map()");
+        const ages = [20,24,26,30,34, 35];
+        const newAges = ages.map( age => age * 2);
+        console.log("[debug] >>> ", newAges);
+
+        const even = ages.filter( age => age%2 === 0 );
+        console.log("[debug] >>> ", even);
+
+        const sum = ages.reduce((acc, curr) => acc +curr, 0)
+        console.log("[debug] >>> ", sum);
+
+        const userAry = [
+            {email: "naver.com", nickname : "IronMan"},
+            {email: "google.com", nickname : "Bob"},
+            {email: "daum.com", nickname : "Alice"},
+        ];
+        /*
+        Quiz
+        - 배열의 reduce() 함수를 이용해서 email 값을 key로하고, 
+          nickname값을 value로 하는 새로운 객체를 만들어서 출력해본다면?
+        - 즉, 배열을 가공해서 하나의 객체로 합쳐라
+        */
+
+        const resultAry = userAry.reduce((obj, curr) => {
+            obj[curr.email] = curr.nickname; //key와 value 설정 후 객체 생성
+            return obj;
+        }, {}); //객체 형식으로 만들기 위해 {}를 추가
+        console.log("[debug] >>> ", resultAry);
+
+
+
+
+    </script>
+</body>
+</html>

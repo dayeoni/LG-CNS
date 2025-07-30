@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td {
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            font-weight: bold;
+            font-size: 2em;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading"></h1>
+    <p id="msg"></p>
+    <div id="result">
+        <table>
+            
+        </table>
+    </div>
+    <script>
+        let customer = parseInt(prompt('입장객은 몇 명입니까?'));
+        console.log("[debug] >>> customer ", customer);
+        let column = parseInt(prompt('한 줄에 몇 명씩 앉습니까?'));
+        console.log("[debug] >>> column ", column);
+        ////////////////
+        let heading = "자리배치도";
+        document.querySelector('#heading').innerHTML = heading;
+
+        /*
+        요구사항)
+        - 행을 만들기 위해서 (if ~ else)구문을 이용해 입력받은 customer와 column을 활용하여 row변수에 값을 담는다
+        - <div id="result"> 영역에 반복문을 이용해서 <table>생성
+        - 행, 열 만들기
+        - 좌석번호 추가하기
+        */
+        let row;
+        
+        if (customer % column == 0) {
+            row = customer / column;
+        } else {
+            row = parseInt(customer / column) +1;
+        }
+        document.querySelector('#msg').innerHTML = `요청하신 정보확인결과 ${row}줄이 필요합니다.`;
+
+        let txt = '<table>';
+        // 이중 for문
+        for (let i=0; i < row; i++) {
+            txt += '<tr>'
+            for (let j=1; j <= column; j++) {
+                var seatNo = (i * column) + j;
+                if (seatNo > customer) {
+                    break;
+
+                }
+                txt += `<td>Seat Number: ${seatNo}</td>`;
+                
+            }
+            txt += "</tr>";
+        }
+        txt += '</table>';
+
+        document.querySelector("#result").innerHTML = txt;
+    </script>
+</body>
+</html>
