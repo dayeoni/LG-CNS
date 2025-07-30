@@ -1,4 +1,4 @@
-let total = 100;
+var total = 100;
 
 const getTotal = () => {
     return total;
